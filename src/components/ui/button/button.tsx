@@ -6,7 +6,7 @@ export type ButtonProps<T extends ElementType> = {
   //нужно ограничить тип
   as?: T
   fullWidth?: boolean
-  variant?: 'link' | 'primary' | 'secondary' | 'tertiary'
+  variant?: 'link' | 'primary' | 'primaryWithIcon' | 'secondary' | 'tertiary'
 } & ComponentPropsWithoutRef<T> //get the default props of element (onClick, disabled..)
 
 export const Button = <T extends ElementType>(props: ButtonProps<T>) => {

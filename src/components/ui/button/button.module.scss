@@ -3,17 +3,40 @@
 
   cursor: pointer;
 
+  display: flex;
+  gap: 10px;
   align-items: center;
   justify-content: center;
 
   box-sizing: border-box;
   padding: 6px 28px;
 
+
   font-family: inherit;
-  color: inherit;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-m);
+  color: var(--color-light-100);
+
+  background-color: var(--color-primary-500);
+border-radius: 4px;
 
   &:focus-visible {
-    outline: 2px solid var(--color-info-500);
+    background-color: var(--color-primary-500);
+    outline: 2px solid var(--color-info-700);
+  }
+
+  &:active{
+    background-color: var(--color-primary-700);
+  }
+
+  &:hover{
+    background-color: var(--color-primary-300);
+  }
+
+  &:disabled{
+    color: var(--color-light-900);
+    background-color: var(--color-primary-900);
   }
 }
 
@@ -23,7 +46,26 @@
 
 .secondary {
   background-color: var(--color-dark-300);
+
+  &:focus-visible {
+    background-color: var(--color-dark-300);
+    outline: 2px solid var(--color-info-700);
+  }
+
+  &:active{
+    background-color: var(--color-dark-500);
+  }
+
+  &:hover{
+    background-color: var(--color-dark-100);
+  }
+
+  &:disabled{
+    color: var(--color-light-900);
+    background-color: var(--color-dark-300);
+  }
 }
+
 
 .fullWidth {
   width: 100%;

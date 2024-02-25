@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import ArrowIcon from '@/assets/svg/buttonArrow/buttonArrow.svg'
+
 import { Button } from './'
 
 const meta = {
@@ -23,16 +25,43 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
   args: {
     as: 'button',
-    children: 'Primary Button',
+    children: 'Button primary',
     disabled: false,
     variant: 'primary',
+  },
+}
+
+export const PrimaryWithIcon: Story = {
+  args: {
+    as: 'button',
+    children: (
+      <>
+        <img alt={'arrow svg element'} src={ArrowIcon} /> Button primary{' '}
+      </>
+    ),
+    disabled: false,
+    text: 'primary with icon',
+    variant: 'primary',
+  },
+}
+export const SecondaryWithIcon: Story = {
+  args: {
+    as: 'button',
+    children: (
+      <>
+        <img alt={'arrow svg element'} src={ArrowIcon} /> Button{' '}
+      </>
+    ),
+    disabled: false,
+    text: 'secondary with icon',
+    variant: 'secondary',
   },
 }
 
 export const Secondary: Story = {
   args: {
     as: 'button',
-    children: 'Secondary Button',
+    children: 'Button Secondary',
     disabled: false,
     variant: 'secondary',
   },
