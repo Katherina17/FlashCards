@@ -1,0 +1,70 @@
+.CheckboxRoot{
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+  padding: 3px;
+
+  background-color: transparent;
+  border: 2px solid var(--color-light-900);
+  border-radius: 4px;
+}
+
+.CheckboxRootContainer{
+  width: 36px;
+  height: 36px;
+  padding: 9px;
+  border-radius: 50%;
+
+  &:active, &:focus{
+    background-color: var(--color-dark-100);
+  }
+
+  &:hover{
+    background-color: var(--color-dark-500);
+  }
+}
+
+.CheckboxRootChecked{
+  background-color: white;
+  border: none;
+
+  > .CheckboxIndicator{
+    width: 18px;
+    height: 18px;
+    color: var(--color-dark-700);
+  }
+}
+
+.CheckboxIndicator{
+  width: 18px;
+  height: 18px;
+  color: transparent;
+}
+
+
+button:disabled{
+  color: var(--color-dark-100);
+  background-color: var(--color-dark-100);
+  border: none;
+}
+
+
+.CheckboxRootContainerDisabled{
+  &:active, &:focus, &:hover{
+    background-color: unset;
+    border-radius: unset;
+  }
+}
+
+.labelText{
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+  color: var(--color-light-100);
+
+}
