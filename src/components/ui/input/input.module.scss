@@ -1,0 +1,92 @@
+.input {
+  all: unset;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 284px;
+  padding: 6px 30px 6px 12px;
+
+
+  font-family: inherit;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+  color: var(--color-dark-100);
+
+  background-color: transparent;
+  border: 1px solid var(--color-dark-300);
+  border-radius: 2px;
+
+
+  &:focus-visible {
+    border: 2px solid var(--color-info-700);
+  }
+
+  &:active{
+    color: var(--color-light-100);
+    border: 1px solid var(--color-light-100);
+  }
+
+  &:hover{
+    color: var(--color-dark-100);
+    background-color: var(--color-dark-700);
+    border: 1px solid var(--color-dark-100);
+  }
+
+  &:disabled{
+    color: var(--color-dark-300);
+    border: 1px solid var(--color-dark-300);
+  }
+}
+
+
+.label{
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+  color: var(--color-dark-100);
+
+  &:disabled{
+    color: var(--color-dark-300); //check this property
+  }
+}
+
+.errorInput{
+  color: var(--color-danger-300);
+  border: 1px solid var(--color-danger-300);
+
+  &:active{
+    color: var(--color-danger-300);
+    border: 1px solid var(--color-danger-300);
+  }
+
+  &:hover{
+    color: var(--color-danger-300);
+    background-color: transparent;
+    border: 1px solid var(--color-danger-300);
+  }
+}
+
+.errorInput::placeholder{
+  color: var(--color-danger-300)
+}
+
+.errorText{
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+  color: var(--color-danger-300);
+}
+
+.password {
+  background: url("@/assets/svg/eye.svg") no-repeat scroll right center;
+  background-position-x: calc(100% - 8px);
+}
+
+
+
