@@ -12,6 +12,27 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {
-  args: {},
+export const Select: Story = {
+  args: {
+    label: 'Select-box',
+    options: [
+      { label: 'orange', value: 'efef' },
+      { label: 'milk', value: 'wfwfew' },
+      { label: 'potato', value: 'evdvdv' },
+    ],
+    placeholder: 'select-box',
+  },
+}
+
+export const SelectDisabled: Story = {
+  args: {
+    disabled: true,
+    label: 'Select-box',
+    options: [
+      { label: 'orange', value: 'efef' },
+      { label: 'milk', value: 'wfwfew' },
+      { label: 'potato', value: 'evdvdv' },
+    ],
+    placeholder: 'select-box',
+  },
 }

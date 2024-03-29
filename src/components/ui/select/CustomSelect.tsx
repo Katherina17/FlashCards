@@ -7,35 +7,42 @@ import * as Select from '@radix-ui/react-select'
 import s from './select.module.scss'
 
 type PropsType = {
+  disabled?: boolean
+  label: string
+  options: { label: string; value: any }[]
   placeholder?: string
 }
 
-export const CustomSelect = ({ placeholder }: PropsType) => {
+export const CustomSelect = ({ disabled, label, options, placeholder }: PropsType) => {
   const [selectOpen, setSelectOpen] = useState(false)
   const ChevronIcon = selectOpen ? ChervonUpIcon : ChervonDownIcon
 
   return (
-    <Select.Root onOpenChange={setSelectOpen}>
-      <Select.Trigger className={s.SelectTrigger}>
-        <Select.Value placeholder={placeholder !== undefined ? placeholder : 'Select box..'} />
-        <img alt={selectOpen ? 'arrow up' : 'arrow down'} src={ChevronIcon} />
-      </Select.Trigger>
-      <Select.Portal>
-        <Select.Content className={s.SelectContent}>
-          <Select.ScrollUpButton className={s.SelectScrollButton} />
-
-          <Select.Viewport className={s.SelectViewport}>
-            <SelectItem value={'befed'}>Beef</SelectItem>
-            <SelectItem value={'tgtg'}>Chicken</SelectItem>
-            <SelectItem value={'erge'}>Lamb</SelectItem>
-            <SelectItem value={'ver'}>Pork</SelectItem>
-            <Select.Separator className={s.SelectSeparator} />
-          </Select.Viewport>
-
-          <Select.ScrollDownButton className={s.SelectScrollButton} />
-        </Select.Content>
-      </Select.Portal>
-    </Select.Root>
+    <>
+      <label className={`${s.label} ${disabled ? s.labelDisabled : s.label} `} htmlFor={'randomID'}>
+        {label}
+      </label>
+      <Select.Root disabled={disabled} onOpenChange={setSelectOpen}>
+        <Select.Trigger className={s.SelectTrigger} id={'randomID'}>
+          <Select.Value placeholder={placeholder !== undefined ? placeholder : 'Select box..'} />
+          <img alt={selectOpen ? 'arrow up' : 'arrow down'} src={ChevronIcon} />
+        </Select.Trigger>
+        <Select.Portal>
+          <Select.Content className={s.SelectContent} position={'popper'}>
+            <Select.Viewport className={s.SelectViewport}>
+              {options.map(option => {
+                return (
+                  <SelectItem key={option.value} value={option.value}>
+                    {option.label}
+                  </SelectItem>
+                )
+              })}
+              <Select.Separator className={s.SelectSeparator} />
+            </Select.Viewport>
+          </Select.Content>
+        </Select.Portal>
+      </Select.Root>
+    </>
   )
 }
 
