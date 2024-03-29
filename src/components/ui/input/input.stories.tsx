@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import ArrowIcon from '@/assets/svg/buttonArrow/buttonArrow.svg'
-
 import { Input } from './'
 
 const meta = {
@@ -30,6 +28,15 @@ export const InputText: Story = {
   },
 }
 
+export const InputTextDisabled: Story = {
+  args: {
+    disable: true,
+    label: 'Input',
+    placeholder: 'Input',
+    variant: 'text',
+  },
+}
+
 export const InputTextError: Story = {
   args: {
     error: 'Error!',
@@ -48,12 +55,22 @@ export const InputPassword: Story = {
 }
 export const SearchInput: Story = {
   args: {
-    children: (
-      <>
-        <img alt={'arrow svg element'} src={ArrowIcon} /> Button{' '}
-      </>
-    ),
-    text: 'secondary with icon',
+    placeholder: 'Input search',
+    variant: 'search',
+  },
+}
+
+export const SearchInputError: Story = {
+  args: {
+    error: 'Error!',
+    placeholder: 'Input search',
+    variant: 'search',
+  },
+}
+export const SearchInputDisabled: Story = {
+  args: {
+    disable: true,
+    placeholder: 'Input search',
     variant: 'search',
   },
 }

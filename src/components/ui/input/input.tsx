@@ -6,6 +6,7 @@ import s from './input.module.scss'
 
 export type InputProps<T extends ElementType> = {
   children?: ReactNode
+  disable?: boolean
   error?: null | string
   label?: string
   placeholder?: string
@@ -23,6 +24,7 @@ export const Input = <T extends ElementType>(props: InputProps<T>) => {
           [s.errorInput]: error !== null && error,
         })}
         {...rest}
+        disabled={props.disable}
         placeholder={placeholder}
       />
       {error !== null && error && <span className={s.errorText}> {error} </span>}

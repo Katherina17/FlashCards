@@ -27,7 +27,7 @@
     border: 2px solid var(--color-info-700);
   }
 
-  &:active{
+  &:focus{
     color: var(--color-light-100);
     border: 1px solid var(--color-light-100);
   }
@@ -60,7 +60,7 @@
   color: var(--color-danger-300);
   border: 1px solid var(--color-danger-300);
 
-  &:active{
+  &:focus{
     color: var(--color-danger-300);
     border: 1px solid var(--color-danger-300);
   }
@@ -86,6 +86,25 @@
 .password {
   background: url("@/assets/svg/eye.svg") no-repeat scroll right center;
   background-position-x: calc(100% - 8px);
+
+  &:focus{
+    color: var(--color-light-100);
+    border: 1px solid var(--color-light-100);
+  }
+}
+
+.search{
+  padding: 6px 30px 6px 38px;
+  background: url("@/assets/svg/search-outline.svg") no-repeat scroll left center;
+  background-position-x: 6px;
+
+  &:focus{
+    padding: 6px 30px 6px 38px;
+    background:
+            url("@/assets/svg/search-active-outline.svg") no-repeat scroll 6px center,
+            url("@/assets/svg/close-outline.svg") no-repeat scroll calc(100% - 10px) center;
+    background-position-y: center;
+  }
 }
 
 
