@@ -28,7 +28,7 @@ export const DisabledTabs: Story = {
   },
 }
 
-export const emptyLeftBorderRightTabs: Story = {
+export const EmptyLeftBorderRightTabs: Story = {
   args: {
     label: 'Switcher',
     orientation: 'horizontal',
@@ -36,7 +36,7 @@ export const emptyLeftBorderRightTabs: Story = {
   },
 }
 
-export const emptyLeftTabs: Story = {
+export const EmptyLeftTabs: Story = {
   args: {
     label: 'Switcher',
     orientation: 'horizontal',
@@ -44,7 +44,7 @@ export const emptyLeftTabs: Story = {
   },
 }
 
-export const rightBorderTabs: Story = {
+export const RightBorderTabs: Story = {
   args: {
     label: 'Switcher',
     orientation: 'horizontal',
