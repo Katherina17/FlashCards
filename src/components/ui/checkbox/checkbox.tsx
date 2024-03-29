@@ -7,12 +7,13 @@ import { clsx } from 'clsx'
 import s from './checkbox.module.scss'
 
 type CheckboxProps = {
+  checked?: boolean
   disabled?: boolean
   labelText: ReactNode
 }
 
 export const CheckBox = (props: CheckboxProps) => {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(props.checked)
 
   return (
     <div style={{ alignItems: 'center', display: 'flex', gap: '1px' }}>
@@ -23,7 +24,7 @@ export const CheckBox = (props: CheckboxProps) => {
         })}
       >
         <Checkbox.Root
-          checked
+          checked={checked}
           className={`${s.CheckboxRoot} ${checked ? s.CheckboxRootChecked : ''}`}
           disabled={props.disabled}
           onCheckedChange={() => setChecked(!checked)}

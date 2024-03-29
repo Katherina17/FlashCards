@@ -46,12 +46,12 @@
   color: transparent;
 }
 
-
+/*
 button:disabled{
   color: var(--color-dark-100);
   background-color: var(--color-dark-100);
   border: none;
-}
+} */
 
 
 .CheckboxRootContainerDisabled{
@@ -68,3 +68,14 @@ button:disabled{
   color: var(--color-light-100);
 
 }
+
+.CheckboxRootContainerDisabled > .CheckboxRoot{
+  background-color:transparent;
+  border: 2px solid var(--color-dark-100);
+}
+
+.CheckboxRootContainerDisabled > .CheckboxRootChecked{
+  background-color: var(--color-dark-100);
+}
+
+
